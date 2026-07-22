@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      if(localStorage.getItem('siteTheme') === 'burgundy'){
+        document.documentElement.setAttribute('data-theme','burgundy');
+      }
+    }catch(e){}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Twenty — Love Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand" id="nav-brand">Twenty</div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="countdown.html">Countdown</a>
+    <a href="love-notes.html" class="active">Love Notes</a>
+  </div>
+</nav>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+  <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+  <span class="theme-toggle-label" id="theme-toggle-label">Rose Gold</span>
+</button>
+
+<section id="notes-hero">
+  <svg class="spiral-deco tl" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+  <svg class="spiral-deco br" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+
+  <div class="eyebrow">Tap To Break The Seal</div>
+  <h2 class="notes-title">Sealed With A Sher</h2>
+  <p class="notes-subtitle" id="notes-subtitle">Six lines, written for no one else.</p>
+
+  <div class="seal-grid" id="seal-grid"></div>
+
+  <div class="divider">
+    <svg width="180" height="20" viewBox="0 0 180 20">
+      <line x1="0" y1="10" x2="70" y2="10" stroke="currentColor" stroke-width="1"/>
+      <path d="M90 2 L100 10 L90 18 L80 10 Z" fill="currentColor"/>
+      <line x1="110" y1="10" x2="180" y2="10" stroke="currentColor" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <div class="closing-block">
+    <p class="closing-line" id="footer-closing">This story felt incomplete before you — now, it feels whole.</p>
+    <div class="closing-sign" id="footer-sign">Yours, Your Name</div>
+  </div>
+</section>
+
+<footer>Part 3 of 3 &middot; Love Notes</footer>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+<script src="theme.js"></script>
+<script src="love-notes.js"></script>
+</body>
+</html>

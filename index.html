@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      if(localStorage.getItem('siteTheme') === 'burgundy'){
+        document.documentElement.setAttribute('data-theme','burgundy');
+      }
+    }catch(e){}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Twenty — Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand" id="nav-brand">Twenty</div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="countdown.html">Countdown</a>
+    <a href="love-notes.html">Love Notes</a>
+  </div>
+</nav>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+  <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+  <span class="theme-toggle-label" id="theme-toggle-label">Rose Gold</span>
+</button>
+
+<section id="hero">
+  <svg class="spiral-deco tl" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+  <svg class="spiral-deco br" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+
+  <div class="hero-layout">
+    <div class="hero-art">
+      <div class="hero-art-glow"></div>
+      <img class="hero-art-img" src="images/the-kiss.png" alt="The Kiss, after Gustav Klimt" onerror="this.style.display='none'; this.previousElementSibling.style.display='none';">
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">July 24th</div>
+      <h1 class="hero-title">Happy Birthday</h1>
+      <div class="hero-name" id="her-name">Her Name</div>
+      <p class="hero-subtitle" id="hero-subtitle">Wrapped in gold, hidden in a quiet little forest of our own.</p>
+      <div class="scroll-cue"><span class="line"></span>scroll</div>
+    </div>
+  </div>
+</section>
+
+<section id="polaroid-section">
+  <div class="section-heading">
+    <h2>Pluck A Memory To Keep</h2>
+    <p>Click a polaroid to pull it off the line. Collect a few, then take the whole strip home.</p>
+  </div>
+
+  <div class="washing-line-wrap">
+    <div class="line-cord"></div>
+    <div class="washing-line" id="washing-line"></div>
+  </div>
+  <div class="swipe-hint">drag or scroll to see more →</div>
+
+  <div class="basket-area">
+    <div class="basket-label">The Basket</div>
+    <div class="basket">
+      <div class="basket-peeks" id="basket-peeks"></div>
+      <svg viewBox="0 0 150 110">
+        <path d="M20,40 L130,40 L115,105 L35,105 Z" fill="var(--accent-b)" opacity="0.9"/>
+        <path d="M20,40 L130,40 L115,105 L35,105 Z" fill="none" stroke="var(--gold-deep)" stroke-width="1.5"/>
+        <line x1="35" y1="105" x2="115" y2="105" stroke="var(--gold-deep)" stroke-width="1.5"/>
+        <path d="M28,55 L122,55" stroke="var(--gold-deep)" stroke-width="1" opacity="0.6"/>
+        <path d="M25,70 L125,70" stroke="var(--gold-deep)" stroke-width="1" opacity="0.6"/>
+        <path d="M22,85 L128,85" stroke="var(--gold-deep)" stroke-width="1" opacity="0.6"/>
+        <ellipse cx="75" cy="40" rx="55" ry="8" fill="var(--gold-deep)"/>
+      </svg>
+      <div class="basket-count" id="basket-count">0</div>
+    </div>
+    <div class="basket-actions">
+      <button class="btn" id="download-btn" disabled>Download Strip</button>
+      <button class="btn ghost" id="reset-btn">Put Them Back</button>
+    </div>
+    <div class="download-note">Tip: for the download to work, open this site through a local server or a hosted link (not by double-clicking the file) — browsers block image downloads from files opened directly.</div>
+  </div>
+</section>
+
+<footer>Part 1 of 3 &middot; Home</footer>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+<script src="theme.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

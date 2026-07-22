@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      if(localStorage.getItem('siteTheme') === 'burgundy'){
+        document.documentElement.setAttribute('data-theme','burgundy');
+      }
+    }catch(e){}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Twenty — Countdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="brand" id="nav-brand">Twenty</div>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="countdown.html" class="active">Countdown</a>
+    <a href="love-notes.html">Love Notes</a>
+  </div>
+</nav>
+
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme">
+  <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+  <span class="theme-toggle-label" id="theme-toggle-label">Rose Gold</span>
+</button>
+
+<section id="countdown-hero">
+  <svg class="spiral-deco tl" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+  <svg class="spiral-deco br" viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="4 10"/><circle cx="100" cy="100" r="65" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 9"/><circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="2 8"/></svg>
+
+  <div class="eyebrow">August 2nd &middot; 5:00 PM</div>
+
+  <div class="mosaic-frame">
+    <div class="mosaic-corner tl"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="mosaic-corner tr"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="mosaic-corner bl"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="mosaic-corner br"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+    <h2 class="countdown-title">Until It's Official</h2>
+    <p class="countdown-subtitle" id="countdown-subtitle">Case closed. Verdict: officially yours, effective August 2nd.</p>
+
+    <div class="countdown-grid">
+      <div class="count-box"><span class="num" id="cd-days">--</span><span class="lbl">Days</span></div>
+      <div class="count-box"><span class="num" id="cd-hours">--</span><span class="lbl">Hrs</span></div>
+      <div class="count-box"><span class="num" id="cd-mins">--</span><span class="lbl">Min</span></div>
+      <div class="count-box"><span class="num" id="cd-secs">--</span><span class="lbl">Sec</span></div>
+    </div>
+
+    <p class="countdown-note" id="countdown-note">Until then, consider this a written statement of intent.</p>
+
+    <div class="countdown-progress-wrap">
+      <div class="countdown-progress-label"><span>April 19th</span><span id="progress-percent">0%</span><span>Aug 2nd</span></div>
+      <div class="countdown-progress-track"><div class="countdown-progress-fill" id="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <div class="teaser">
+    <div class="eyebrow">A Small Preview</div>
+    <p id="teaser-text">Somewhere past this countdown, a handful of lines are waiting for you &mdash; open the Love Notes page whenever you're ready.</p>
+  </div>
+</section>
+
+<footer>Part 2 of 3 &middot; Countdown</footer>
+
+<script src="config.js"></script>
+<script src="nav.js"></script>
+<script src="theme.js"></script>
+<script src="countdown.js"></script>
+</body>
+</html>

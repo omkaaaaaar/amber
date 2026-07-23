@@ -32,7 +32,7 @@ const CONFIG = {
   // Edit these freely any time.
   loveNotesSubtitle: "Six lines, written for no one else.",
   sherMessages: [
-    "Hiii babbbyyy, I really dk what to right here I feel I am on the spot, but mmmyeah I like you a lot mwwwaaaahhhh",
+    "Hiii babbbyyy, I really dk what to write here I feel I am on the spot, but mmmyeah I like you a lot mwwwaaaahhhh",
     "I like the way you smile, a lot",
     "I like Ghulam Ali because of you, cause his songs remind me of you",
     "I love when you scold me btw",

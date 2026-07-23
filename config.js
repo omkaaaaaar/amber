@@ -36,8 +36,8 @@ const CONFIG = {
     "I like the way you smile, a lot",
     "I like Ghulam Ali because of you, cause his songs remind me of you",
     "I love when you scold me btw",
-    "I love to talk with you, online because irl",
-    "The more I know you, the more I want to."
+    "I love to spend time with you and for you.",
+    "Thankyou for bearing with my annoying ass."
   ],
   footerClosing: "I felt incomplete before you btw \u2014 now, it feels whole."
 };

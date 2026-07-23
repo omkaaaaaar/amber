@@ -5,8 +5,8 @@
    everywhere.
    ===================================================================== */
 const CONFIG = {
-  herName: "Her Name",
-  yourName: "Your Name",
+  herName: "Amber",
+  yourName: "Omkar",
 
   heroSubtitle: "Wrapped in gold, hidden in a quiet little forest of our own.",
 
@@ -15,14 +15,14 @@ const CONFIG = {
   // instead so nothing breaks.
   polaroidCount: 16,
   polaroidCaptions: [
-    "First Frame", "That Evening Light", "Quiet Sundays", "An Old Melody",
-    "Unplanned", "Golden Hour", "Between Words", "A Small Forever",
-    "After The Rain", "Somewhere New", "Just Us", "To Be Continued",
-    "Little Traditions", "Our Kind Of Chaos", "Still Here", "More Of This"
+    "I love our lips", "da official first date", "nazar na lage tumhe", "pyari",
+    "I love a lot when you take part in stupid signs with me ", "pyari gundi", "my fav makeup artist", "niini aa rahi madam ko",
+    "pyari again", "meri bhi bottle bhar do please", "👅", "baddie",
+    "I am glad we met", "paseeenaaaaa 👅", "hiii babyy", "rawr"
   ],
 
   // countdown target used on the Countdown page (Part 2)
-  countdownTarget: "2026-08-02T17:00:00",
+  countdownTarget: "2026-08-03T17:00:00",
   countdownStart: "2026-04-19T00:00:00",   // the day you started casually meeting
   countdownSubtitle: "Case closed. Verdict: officially yours, effective August 2nd.",
   countdownNote: "Until then, consider this a written statement of intent.",
@@ -32,12 +32,12 @@ const CONFIG = {
   // Edit these freely any time.
   loveNotesSubtitle: "Six lines, written for no one else.",
   sherMessages: [
-    "Your calm is my favorite place to be.",
-    "Wherever you are, the gathering comes alive.",
-    "There is a little music hidden in everything you say.",
-    "Twenty years old, but your mind reasons like a seasoned maestro.",
-    "With you, even silence feels like conversation.",
+    "Hiii babbbyyy, I really dk what to right here I feel I am on the spot, but mmmyeah I like you a lot mwwwaaaahhhh",
+    "I like the way you smile, a lot",
+    "I like Ghulam Ali because of you, cause his songs remind me of you",
+    "I love when you scold me btw",
+    "I love to talk with you, online because irl",
     "The more I know you, the more I want to."
   ],
-  footerClosing: "This story felt incomplete before you \u2014 now, it feels whole."
+  footerClosing: "I felt incomplete before you btw \u2014 now, it feels whole."
 };

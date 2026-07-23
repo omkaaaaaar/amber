@@ -2,6 +2,19 @@
    HOME PAGE LOGIC
    ===================================================================== */
 
+// tries photos/N.jpg first; if that 404s, tries photos/N.png; only shows
+// the placeholder text if neither file exists
+function handlePhotoError(img) {
+  const index = img.dataset.index;
+  if (img.dataset.stage !== 'png') {
+    img.dataset.stage = 'png';
+    img.src = 'photos/' + index + '.png';
+    return;
+  }
+  img.style.display = 'none';
+  img.parentElement.textContent = 'add photos/' + index + '.jpg or .png';
+}
+
 document.getElementById('her-name').textContent = CONFIG.herName;
 document.getElementById('nav-brand').textContent = CONFIG.herName + ' \u2014 Twenty';
 document.getElementById('hero-subtitle').textContent = CONFIG.heroSubtitle;
@@ -29,8 +42,8 @@ for (let i = 1; i <= count; i++) {
     '<div class="clip"></div>' +
     '<div class="polaroid-card" style="--tilt:' + tilt + 'deg">' +
       '<div class="polaroid-photo">' +
-        '<img src="photos/' + i + '.jpg" alt="' + caption + '" ' +
-        'onerror="this.style.display=\'none\'; this.parentElement.textContent=\'add photos/' + i + '.jpg\';">' +
+        '<img src="photos/' + i + '.jpg" alt="' + caption + '" data-index="' + i + '" ' +
+        'onerror="handlePhotoError(this)">' +
       '</div>' +
       '<div class="polaroid-caption">' + caption + '</div>' +
     '</div>' +
@@ -104,7 +117,7 @@ function pluck(peg) {
 
   // record in the basket, keeping chronological order regardless of
   // pluck order, so the downloaded strip reads like a little timeline
-  basketItems.push({ index: index, src: 'photos/' + index + '.jpg', caption: CONFIG.polaroidCaptions[index - 1] || ('Memory ' + index) });
+  basketItems.push({ index: index, src: 'photos/' + index, caption: CONFIG.polaroidCaptions[index - 1] || ('Memory ' + index) });
   basketItems.sort((a, b) => a.index - b.index);
 
   updateBasketUI();
@@ -175,11 +188,20 @@ function buildStripImage(items) {
     if (items.length === 0) { resolve(canvas.toDataURL('image/png')); return; }
 
     items.forEach((item, i) => {
-      const img = new Image();
-      img.onload = () => { drawCard(img, i, item); finish(); };
-      img.onerror = () => { drawCard(null, i, item); finish(); };
-      img.src = item.src;
+      loadImageWithFallback(item.src, (img) => { drawCard(img, i, item); finish(); });
     });
+
+    function loadImageWithFallback(basePath, callback) {
+      const img = new Image();
+      img.onload = () => callback(img);
+      img.onerror = () => {
+        const img2 = new Image();
+        img2.onload = () => callback(img2);
+        img2.onerror = () => callback(null);
+        img2.src = basePath + '.png';
+      };
+      img.src = basePath + '.jpg';
+    }
 
     function drawCard(img, i, item) {
       const y = headerH + i * (cardH + gap);
